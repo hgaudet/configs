@@ -1,0 +1,9 @@
+[user]
+    name = Hannah Gaudet
+    email = hannah@gaudet.me
+[init]
+    defaultBranch = main
+[core]
+    editor = code --wait
+[color]
+    ui = true
