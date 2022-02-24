@@ -1,22 +1,3 @@
-# Uncomment the following line to use case-sensitive completion.
-# CASE_SENSITIVE="true"
-
-# Uncomment the following line to use hyphen-insensitive completion.
-# Case-sensitive completion must be off. _ and - will be interchangeable.
-# HYPHEN_INSENSITIVE="true"
-
-# Uncomment the following line if pasting URLs and other text is messed up.
-# DISABLE_MAGIC_FUNCTIONS="true"
-
-# Uncomment the following line to disable colors in ls.
-# DISABLE_LS_COLORS="true"
-
-# Uncomment the following line to disable auto-setting terminal title.
-# DISABLE_AUTO_TITLE="true"
-
-# Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
-
 # Which plugins would you like to load?
 plugins=(git)
 
@@ -55,3 +36,10 @@ zstyle ':vcs_info:git:*' actionformats '(%F{069}%b|%a%u%c%f)'
 
 # When iterating through history, skip continuous duplicate commands
 setopt HIST_IGNORE_DUPS
+
+
+DOTFILES="$HOME/projects/configs"
+# Add .zsh to fpath for git autocompletion
+zstyle ':completion:*:*:git:*' script $DOTFILES/zsh/git/git-completion.bash
+fpath=(~/.zsh $fpath)
+autoload -Uz compinit && compinit
