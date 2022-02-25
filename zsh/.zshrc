@@ -1,3 +1,10 @@
+zstyle ':autocomplete:*' min-input 2 # int
+# Wait until this many characters have been typed, before showing completions.
+
+
+source ./zsh-autocomplete/zsh-autocomplete.plugin.zsh
+
+
 # Which plugins would you like to load?
 plugins=(git)
 
