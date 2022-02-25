@@ -9,6 +9,7 @@ git clone https://github.com/hgaudet/configs.git
 cd configs
 ```
 
+
 2. Install Homebrew
 
 ``` bash
@@ -21,10 +22,17 @@ cd configs
 brew bundle
 ```
 
-4. Create a symbolic link for the repo version of .zshrc and .zshenv to the home directory
+4. Clone necessary repo for autocomplete
+```git clone --depth 1 -- https://github.com/marlonrichert/zsh-autocomplete.git```
+
+5. Create a symbolic link for the repo version of .zshrc and .zshenv to the home directory
 
 ``` bash
 # The path to the original needs to be relative to the location of the symbolic link, so be explicit
-ln -s ~/projects/dotfiles/zsh/.zshenv ~/.zshenv
-ln -s ~/projects/dotfiles/zsh/.zshrc ~/.zshrc
+ln -s ~/configs/zsh/.zshenv ~/.zshenv
+ln -s ~/configs/zsh/.zshrc ~/.zshrc
 ```
+
+6. Create a copy of git completion
+mkdir ~/.zsh
+cp ~/configs/zsh/git/git-completion.zsh ~/.zsh/_git
