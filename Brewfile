@@ -3,7 +3,9 @@ cask 'iterm2'
 cask 'visual-studio-code'
 cask 'docker'
 cask 'google-cloud-sdk'
+cask 'slack'
 brew 'git'
+
 
 # For Zelus
 brew 'pyenv'
@@ -13,4 +15,9 @@ brew 'postgresql'
 brew 'kubernetes-cli'
 brew 'direnv'
 
+# Nice to haves
 cask 'postman'
+cask 'spotify'
+cask 'notion'
+cask 'todoist'
+cask 'flux'
