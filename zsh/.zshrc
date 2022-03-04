@@ -1,3 +1,11 @@
+#!/bin/zsh
+
+# +---------+
+# | PRIVATE |
+# +---------+
+# Load private environment variables
+[ -f $DOTFILES/private.zsh ] && . $DOTFILES/private.zsh
+
 zstyle ':autocomplete:*' min-input 2 # int
 # Wait until this many characters have been typed, before showing completions.
 
@@ -44,9 +52,22 @@ zstyle ':vcs_info:git:*' actionformats '(%F{069}%b|%a%u%c%f)'
 # When iterating through history, skip continuous duplicate commands
 setopt HIST_IGNORE_DUPS
 
+setopt EXTENDED_HISTORY          # Write the history file in the ':start:elapsed;command' format.
+setopt SHARE_HISTORY             # Share history between all sessions.
+setopt HIST_EXPIRE_DUPS_FIRST    # Expire a duplicate event first when trimming history.
+setopt HIST_IGNORE_DUPS          # Do not record an event that was just recorded again.
+setopt HIST_IGNORE_ALL_DUPS      # Delete an old recorded event if a new event is a duplicate.
+setopt HIST_FIND_NO_DUPS         # Do not display a previously found event.
+setopt HIST_IGNORE_SPACE         # Do not record an event starting with a space.
+setopt HIST_SAVE_NO_DUPS         # Do not write a duplicate event to the history file.
+setopt HIST_VERIFY               # Do not execute immediately upon history expansion.
+
 
 DOTFILES="$HOME/projects/configs"
 # Add .zsh to fpath for git autocompletion
 zstyle ':completion:*:*:git:*' script $DOTFILES/zsh/git/git-completion.bash
 fpath=(~/.zsh $fpath)
 autoload -Uz compinit && compinit
+
+alias lsa="ls -a"
+
