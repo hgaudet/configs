@@ -25,8 +25,7 @@ chmod -R go-w "$(brew --prefix)/share/zsh"
 
 3. Add brew to path
 ``` bash
-echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/hgaudet/.profile
-    eval "$(/opt/homebrew/bin/brew shellenv)"
+export PATH="/opt/homebrew/bin:$PATH" >> ~/.zshrc
 ```
 
 4. Install applications listed in Brewfile
