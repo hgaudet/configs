@@ -41,5 +41,7 @@ ln -s ~/configs/zsh/.zshrc ~/.zshrc
 ```
 
 6. Create a copy of git completion
+```
 mkdir ~/.zsh
 cp ~/configs/zsh/git/git-completion.zsh ~/.zsh/_git
+```
