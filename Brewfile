@@ -5,6 +5,7 @@ cask 'docker'
 cask 'google-cloud-sdk'
 cask 'slack'
 brew 'git'
+brew 'zsh-syntax-highlighting'
 
 
 # For Zelus
