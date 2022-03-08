@@ -6,6 +6,7 @@ cask 'google-cloud-sdk'
 cask 'slack'
 brew 'git'
 brew 'zsh-syntax-highlighting'
+brew 'htop'
 
 
 # For Zelus
